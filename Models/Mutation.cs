@@ -14,6 +14,9 @@ namespace GrapgQlApp.Models
         {
             _studentService = studentService;
         }
-        public async Task<Student> Create(Student student) => await _studentService.Create(student);
+        public async Task<Student> Create(Student student) 
+                    => await _studentService.Create(student);
+        public async Task<bool> Delete(Student student) =>
+                    await _studentService.Delete(student);
     }
 }

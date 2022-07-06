@@ -10,5 +10,6 @@ namespace GraphQLApi.Services
     {
         List<Student> GetStudents();
         Task<Student> Create(Student student);
+        Task<bool> Delete(Student student);
     }
 }

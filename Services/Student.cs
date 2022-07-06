@@ -27,5 +27,12 @@ namespace GraphQLApi.Services
             }
             return Students;
         }
+
+        public async Task<bool> Delete(Student student)
+        {
+            
+            return Students.Remove(student);
+            
+         }
     }
 }
