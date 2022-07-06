@@ -17,6 +17,7 @@ using HotChocolate.AspNetCore;
 using GraphQLApi.Services;
 using GraphQLApi.Models;
 using HotChocolate;
+using GrapgQlApp.Models;
 
 namespace GrapgQlApp
 {
@@ -37,10 +38,12 @@ namespace GrapgQlApp
             services.AddControllers();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<Query>();
+            services.AddScoped<Mutation>();
             services.AddGraphQL(p => SchemaBuilder.New()
                             .AddServices(p)
                             .AddType<StudentType>()
                             .AddQueryType<Query>()
+                            .AddMutationType<Mutation>()
                             .Create());
         }
 

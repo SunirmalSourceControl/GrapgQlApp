@@ -8,19 +8,24 @@ namespace GraphQLApi.Services
 {
     public class StudentService : IStudentService
     {
+        public async Task<Student> Create(Student student)
+        {
+            Students.Add(student);
+            return student;
+        }
+        private List<Student> Students = new List<Student>();
         public List<Student> GetStudents()
         {
-            List<Student> students = new List<Student>();
             for(int i = 1; i <= 9; i++)
             {
-                students.Add(new Student
+                Students.Add(new Student
                 {
                      StudentId= i,
                      Name = "STU" + i,
                      Roll= "1000" + i
                 });
             }
-            return students;
+            return Students;
         }
     }
 }

@@ -9,5 +9,6 @@ namespace GraphQLApi.Services
     public interface IStudentService
     {
         List<Student> GetStudents();
+        Task<Student> Create(Student student);
     }
 }
